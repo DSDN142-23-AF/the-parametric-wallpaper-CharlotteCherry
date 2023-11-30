@@ -1,10 +1,18 @@
 //your parameter variables go here!
 
+//Lady Bug
 let bodyX = 90;
 let bodyY = 115;
+let spot1 = 13;
+let spot2 = 10;
+let spot3 = 15;
 
+//Flower
+let circleX = 200;
+let circleY = 200;
+let size = circleX - 180;
 
-
+let
 
 function setup_wallpaper(pWallpaper) {
   
@@ -20,7 +28,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(195,221,243); //light honeydew green colour
+  background(195,221,243); //light blue 
 }
 
 
@@ -32,8 +40,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 //line 
 fill (0);
 stroke (0);
-line (bodyX - 40,bodyY +5,145,60);
-line (bodyX - 20, bodyY + 20, 160, 80);
+line (bodyX - 40,bodyY +5,bodyX + 55,bodyY - 55);
+line (bodyX - 20, bodyY + 20, bodyX + 70, bodyY - 35);
 
 // circle ontop of line 
 ellipse (bodyX + 69, bodyY - 35,5,5);
@@ -53,42 +61,30 @@ ellipse (bodyX + 55, bodyY - 55, 5, 5);
   // spots 
   fill (0);
   stroke (0);
-  ellipse ( bodyX - 10, 100, 13,13);
-  ellipse (bodyX + 20, 113, 10, 10);
-  ellipse (bodyX - 5,135, 15, 15);
+  ellipse ( bodyX - 10, bodyY - 15, spot1);
+  ellipse (bodyX + 20, bodyY + 2, spot2);
+  ellipse (bodyX - 5,bodyY + 20 , spot3);
   
 
   
-  
-  
-  
-  // leafs 
+  // petals
 
-fill (150, 173, 127);
+fill (150, 173, 127);// light green
 stroke (150, 173, 127);
 ellipse (40, 0, 50, 35);// left upper  
-  
-
-
- 
-fill (150, 173, 127);
-stroke (150, 173, 127);
 ellipse (200,44,35,50);// righ upper 
-
-
 ellipse (200, 155, 35, 50);
- fill (107,144,119);
+ 
+fill (107,144,119);// dark green
 stroke (107,144,119);
   ellipse (155,200,50,35);// righ botom 
   ellipse (0, 45, 35,50);// right upper
-
-// left bottom 
-ellipse (0,155,35,50)
+  ellipse (0,155,35,50)// left bottom
   
-fill (300);// circle 
+fill (300);// circle for flower
 stroke (300);
-ellipse (0,0,20,20);
-ellipse (200,200,20,20);
+ellipse (circleX - 200, circleY - 200,size,size);
+ellipse (circleX,circleY,size,size);
  
 fill (0);
 //line (70,150,70,150);
