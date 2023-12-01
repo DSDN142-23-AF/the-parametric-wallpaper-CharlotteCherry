@@ -14,13 +14,13 @@ let size = circleX - 180;
 
 let petalW = 35 // 35
 let petalH = 50 // 50
-
+let showthepetal = true;
 
 function setup_wallpaper(pWallpaper) {
   
    //pWallpaper.output_mode(DEVELOP_GLYPH );
-   pWallpaper.output_mode(GLIDE_WALLPAPER);
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -37,28 +37,28 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  
   
   
-//line 
+//ladybug antennas - line
 fill (0);
 stroke (0);
 line (bodyX - 40,bodyY +5,bodyX + 55,bodyY - 55);
 line (bodyX - 20, bodyY + 20, bodyX + 70, bodyY - 35);
 
-// circle ontop of line 
+// antennas - circle 
 ellipse (bodyX + 69, bodyY - 35,5,5);
 ellipse (bodyX + 55, bodyY - 55, 5, 5);
 
-  //head 
+  //Ladybugs head 
   fill(0);
   stroke(0);
   ellipse (bodyX + 30,bodyY - 20, 50,50);
  
 
-  //body
+  //Ladybugs body
   fill(241, 94, 87)
   stroke(241, 94, 87); 
   ellipse (bodyX, bodyY,90,90);
 
-  // spots 
+  //Ladybugs spots 
   fill (0);
   stroke (0);
   ellipse ( bodyX - 10, bodyY - 15, spot1);
@@ -67,12 +67,20 @@ ellipse (bodyX + 55, bodyY - 55, 5, 5);
   
 
   
-  // petals
+  //flowers petals
 
 fill (150, 173, 127);// light green
 stroke (150, 173, 127);
 ellipse (40, 0, petalH, petalW);// left upper  
-ellipse (200,44, petalW,petalH);// righ upper 
+
+// my if statment 
+let showthepetal = true;
+
+if(showthepetal){
+  ellipse (200,44, petalW,petalH);// bottom petal
+
+}
+
 ellipse (200, 155, petalW, petalH);
  
 fill (107,144,119);// dark green
@@ -81,7 +89,8 @@ stroke (107,144,119);
   ellipse (0, 45, petalW,petalH);// right upper
   ellipse (0,155,petalW,petalH)// left bottom
   
-  fill (300);// circle for flower
+  // cirlce for middle of flower 
+  fill (300);
 stroke (300);
 ellipse (circleX - 200, circleY - 200,size,size);
 ellipse (circleX,circleY,size,size);
